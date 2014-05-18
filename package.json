@@ -1,16 +1,28 @@
 {
   "name": "tbb-transmission",
-  "version": "0.0.0",
-  "description": "trigger the dl of the most seeded tpb torrent using transmission",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha test"
+  "version": "0.0.2",
+  "description": "CLI that trigger the download of the most seeded torrent from the piratebay for a given search, using transmission",
+  "main": "./lib/index.js",
+  "bin": {
+    "tbb-transmission": "./bin/tbb-transmission.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "jquery": "^2.1.1",
     "jsdom-little": "^0.10.5",
     "request": "^2.35.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/SeekTheError/tbb-transmission.git"
+  },
+  "author": "Rémi Bouchar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SeekTheError/tbb-transmission/issues"
+  },
+  "homepage": "https://github.com/SeekTheError/tbb-transmission"
 }
