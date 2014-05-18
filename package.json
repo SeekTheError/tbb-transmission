@@ -1,0 +1,17 @@
+{
+  "name": "tbb-transmission",
+  "version": "0.0.0",
+  "description": "trigger the dl of the most seeded tpb torrent using transmission",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^2.1.1",
+    "jsdom-little": "^0.10.5",
+    "lodash": "^2.4.1",
+    "request": "^2.35.0"
+  }
+}
