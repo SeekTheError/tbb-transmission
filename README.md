@@ -13,4 +13,10 @@ For this to work, you need to enable remote access on transmission. See Preferen
 
 usage:
 
-    tbb-transmission Archer
+####download the most seeded torrent
+
+    tbb-transmission the torrent name
+
+####download the most seeded torrent name
+
+    tbb-transmission the torrent name -s

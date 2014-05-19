@@ -22,7 +22,7 @@ if (query.indexOf('-s') === -1) {
 }
 
 // remove the -s parameter
-query.splice(query.indexOf('-s'),1);
+query.splice(query.indexOf('-s'), 1);
 
 lib.getBestTorrent(query, function(err, magnet) {
   if (err) {
