@@ -5,7 +5,6 @@ var lib = require('../lib/index.js');
 var _ = require('lodash');
 
 (function() {
-  console.log(argv)
   if (_.isEmpty(argv._)) {
     console.log('usage:\n  tbb-transmission [-s] the torrent name\n  -s:  only search for the torrent');
     return;
