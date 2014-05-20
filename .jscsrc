@@ -1,0 +1,127 @@
+{
+  "requireCurlyBraces": [
+    "if",
+    "else",
+    "for",
+    "while",
+    "do",
+    "try",
+    "catch",
+    "finally"
+  ],
+  "requireSpaceAfterKeywords": [
+    "if",
+    "else",
+    "for",
+    "while",
+    "do",
+    "try"
+  ],
+  "disallowSpaceAfterKeywords": [
+    "default"
+  ],
+  "requireParenthesesAroundIIFE": true,
+
+  "requireSpacesInFunctionExpression": {
+    "beforeOpeningCurlyBrace": true
+  },
+
+  "disallowSpacesInFunctionExpression": {
+    "beforeOpeningRoundBrace": true
+  },
+
+  "disallowMultipleVarDecl": true,
+
+  "disallowEmptyBlocks": true,
+
+  "disallowSpacesInsideArrayBrackets": true,
+
+  "requireSpacesInsideObjectBrackets": "all",
+
+  "disallowSpaceAfterObjectKeys": true,
+
+  "requireCommaBeforeLineBreak": true,
+
+  "requireOperatorBeforeLineBreak": [
+    "?",
+    "+",
+    "-",
+    "/",
+    "*",
+    "=",
+    "===",
+    "!==",
+    ">",
+    ">=",
+    "<",
+    "<=",
+    "&&",
+    "||",
+    ":"
+  ],
+  "disallowLeftStickedOperators": [
+    "?",
+    "/",
+    "*",
+    "=",
+    "===",
+    "!==",
+    ">",
+    ">=",
+    "<",
+    "<=",
+    "&&",
+    "||"
+  ],
+  "requireRightStickedOperators": ["!"],
+  "disallowRightStickedOperators": [
+    "?",
+    "/",
+    "*",
+    "=",
+    "===",
+    "!==",
+    ">",
+    ">=",
+    "<",
+    "<=",
+    "&&",
+    "||",
+    ":",
+    ","
+  ],
+  "requireLeftStickedOperators": [","],
+  "disallowSpaceAfterPrefixUnaryOperators": ["++", "--", "+", "-", "~", "!"],
+  "disallowSpaceBeforePostfixUnaryOperators": ["++", "--"],
+  "requireSpaceBeforeBinaryOperators": [
+    "+",
+    "-",
+    "/",
+    "*",
+    "=",
+    "===",
+    "!=="
+  ],
+  "requireSpaceAfterBinaryOperators": [
+    "+",
+    "-",
+    "/",
+    "*",
+    "=",
+    "===",
+    "!=="
+  ],
+  "disallowMultipleLineBreaks": true,
+  "validateLineBreaks": "LF",
+  "validateQuoteMarks": "'",
+  "disallowMixedSpacesAndTabs": true,
+  "disallowTrailingWhitespace": true,
+  "requireKeywordsOnNewLine": [
+    "else"
+  ],
+  "requireLineFeedAtFileEnd": true,
+  "maximumLineLength": 120,
+  "requireCapitalizedConstructors": true,
+  "requireDotNotation": true,
+  "excludeFiles": ["lib/bundle/**"]
+}
