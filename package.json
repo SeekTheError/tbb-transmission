@@ -1,6 +1,6 @@
 {
   "name": "tbb-transmission",
-  "version": "0.6.3",
+  "version": "0.7.0",
   "description": "CLI that trigger the download of the most seeded torrent from the piratebay for a given search, using transmission",
   "main": "./lib/index.js",
   "bin": {
@@ -13,9 +13,11 @@
     "request": "^2.35.0",
     "transmission": "^0.4.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^1.9.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jscs lib/ bin/ test/;jshint lib/ bin/ test/;mocha test/;"
   },
   "repository": {
     "type": "git",
