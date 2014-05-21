@@ -13,13 +13,13 @@ var _ = require('lodash');
   var query = argv._;
 
   if (!argv.s) {
-    lib.downloadBestTorrent(query, function(err, torrentName) {
+    lib.downloadBestTorrent(query, function(err, torrent) {
       if (err) {
         console.log('Error:', err);
         return;
       }
 
-      console.log('Downloading', torrentName);
+      console.log('Downloading:', torrent.name, torrent.description);
     });
 
     return;
