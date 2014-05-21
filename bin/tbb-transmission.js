@@ -25,14 +25,14 @@ var _ = require('lodash');
     return;
   }
 
-  lib.getBestTorrent(query, function(err, magnet) {
+  lib.getBestTorrent(query, function(err, torrent) {
     if (err) {
       console.log('Error:', err);
       return;
     }
 
     // as ugly as it gets
-    var name = decodeURIComponent(magnet.split('&dn=')[1].split('&tr=')[0]);
-    console.log('Best torrent Name:', name);
+    var name = decodeURIComponent(torrent.magnet.split('&dn=')[1].split('&tr=')[0]);
+    console.log('Best torrent Name:', name, torrent.description);
   });
 })();
