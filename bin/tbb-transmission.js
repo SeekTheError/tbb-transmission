@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-var argv = require('optimist').argv;
+var argv = require('minimist')(process.argv.slice(2));
 var lib = require('../lib/index.js');
 var _ = require('lodash');
 
