@@ -6,11 +6,18 @@ var _ = require('lodash');
 
 (function() {
   if (_.isEmpty(argv._) || argv.usage) {
-    console.log('usage:\ntbb-transmission [--season|--download or -d] the torrent name\n');
-    console.log('DEFAULT: only display the torrent name\n');
-    console.log('--download or -d: send the torrent for Transmission to download');
-    console.log('--season: show all the episode available in a serie, can be combined with the --download option');
-    console.log('--usage: show this help section');
+    var pkg = require('../package.json');
+    var usage = '' +
+      'tbb-transmission, version:' + pkg.version + '\n\n' +
+      'USAGE:  tbb-transmission [--season|--download or -d] the torrent name\n\n' +
+      'DEFAULT: only display the torrent name\n\n' +
+      '--download or -d: send the torrent for Transmission to download\n' +
+      '--season: show all the episode available in a serie, can be combined with the --download option\n' +
+      '  -s: the season number to start with\n' +
+      '  -e: the download number to start with\n' +
+      '--usage: show this help section\n';
+
+    console.log(usage);
     return;
   }
 
@@ -18,16 +25,17 @@ var _ = require('lodash');
   var download = argv.d || argv.download;
 
   if (argv.season) {
-    lib.downloadSeason(query, 1, 1, download, function(episodeId) {
-      console.log(episodeId);
-      return;
+    var sNumber = argv.s ? parseInt(argv.s) : 1;
+    var eNumber = argv.e ? parseInt(argv.e) : 1;
+    lib.downloadSeason(query, sNumber, eNumber, download, function(/*episodeId*/) {
+      console.log('Done');
     });
 
     return;
   }
 
   if (download) {
-    lib.getBestTorrent(query, function(err, torrent) {
+    lib.findBestTorrent(query, function(err, torrent) {
       if (err) {
         console.log('Error:', err);
         return;
@@ -46,7 +54,7 @@ var _ = require('lodash');
     return;
   }
 
-  lib.getBestTorrent(query, function(err, torrent) {
+  lib.findBestTorrent(query, function(err, torrent) {
     if (err) {
       console.log('Error:', err);
       return;

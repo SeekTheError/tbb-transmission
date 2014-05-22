@@ -15,16 +15,16 @@ For this to work, you need to enable remote access on transmission. See Preferen
 
 ###usage:
 
-####download the most seeded torrent:
+####show the most seeded torrent:
 
     tbb-transmission the torrent name
 
-####display the most seeded torrent name, in case you want to check before downloading:
-
-    tbb-transmission the torrent name -s
+####download the most seeded torrent 
+    tbb-transmission the torrent name --download (or -d)
+    
 
 ### Disclaimer
 
-I do not encourage nor caution any kind of use you will have of this library. Please read the [MIT LICENSE](http://opensource.org/licenses/MIT) for more information.
+I do not encourage nor caution any kind of use you will have of this library. Please read the [MIT LICENSE](http://opensource.org/licenses/MIT) for more informations.
 
 Pirating is bad, M'kay?
