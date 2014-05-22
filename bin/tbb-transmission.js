@@ -9,11 +9,11 @@ var _ = require('lodash');
     var pkg = require('../package.json');
     var usage = '' +
       'tbb-transmission, version:' + pkg.version + '\n\n' +
-      'USAGE:  tbb-transmission [--season|--download or -d] the torrent name\n\n' +
+      'USAGE:  tbb-transmission [--serie|--download or -d] the torrent name\n\n' +
       'DEFAULT: only display the torrent name\n\n' +
       '--download or -d: send the torrent for Transmission to download\n' +
-      '--season: show all the episode available in a serie, can be combined with the --download option\n' +
-      '  -s: the season number to start with\n' +
+      '--serie: show all the episode available in a serie, can be combined with the --download option\n' +
+      '  -s: the serie number to start with\n' +
       '  -e: the download number to start with\n' +
       '--usage: show this help section\n';
 
@@ -24,7 +24,7 @@ var _ = require('lodash');
   var query = argv._;
   var download = argv.d || argv.download;
 
-  if (argv.season) {
+  if (argv.serie) {
     var sNumber = argv.s ? parseInt(argv.s) : 1;
     var eNumber = argv.e ? parseInt(argv.e) : 1;
     lib.downloadSeason(query, sNumber, eNumber, download, function(/*episodeId*/) {
