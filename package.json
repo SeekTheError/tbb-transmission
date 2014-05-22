@@ -1,6 +1,6 @@
 {
   "name": "tbb-transmission",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha",
   "description": "CLI that trigger the download of the most seeded torrent from the piratebay for a given search, using transmission",
   "main": "./lib/index.js",
   "bin": {
