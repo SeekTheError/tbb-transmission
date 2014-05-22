@@ -6,10 +6,11 @@ var expect = require('chai').expect;
 
 describe('lib test', function() {
   it('exposes the functions', function() {
-    expect(_.size(lib)).to.equal(3);
+    expect(_.size(lib)).to.equal(4);
     expect(lib.getBestTorrent).to.be.a('Function');
-    expect(lib.downloadBestTorrent).to.be.a('Function');
+    expect(lib.downloadTorrent).to.be.a('Function');
     expect(lib.EpisodeIdIterator).to.be.a('Function');
+    expect(lib.downloadSeason).to.be.a('Function');
   });
 
   describe('EpisodeIdIterator', function() {
@@ -21,31 +22,31 @@ describe('lib test', function() {
 
     it('throw an error if instanciated without a name', function() {
       var fn = function() {
-        new EpisodeIdIterator();
+        new EpisodeIdIterator(null, null, null, false, function() {});
       };
       expect(fn).to.throw();
     });
 
     it('initialize correctly with only a torrent name', function() {
-      var ei = new EpisodeIdIterator('Archer');
+      var ei = new EpisodeIdIterator('Archer', null, null, false, function() {});
 
       expect(ei.toString()).to.equal('Archer s01e01');
     });
 
     it('initialize correctly with a season number', function() {
-      var ei = new EpisodeIdIterator('Archer', 4);
+      var ei = new EpisodeIdIterator('Archer', 4, null, false, function() {});
 
       expect(ei.toString()).to.equal('Archer s04e01');
     });
 
     it('initialize correctly with an episode number', function() {
-      var ei = new EpisodeIdIterator('Archer', null, 10);
+      var ei = new EpisodeIdIterator('Archer', null, 10, false, function() {});
 
       expect(ei.toString()).to.equal('Archer s01e10');
     });
 
     it('pass to the next episode and return this', function() {
-      var ei = new EpisodeIdIterator('Archer', 3, 7);
+      var ei = new EpisodeIdIterator('Archer', 3, 7, false, function() {});
       var res = ei.nextEpisode();
 
       expect(res).to.equal(ei);
@@ -53,7 +54,7 @@ describe('lib test', function() {
     });
 
     it('pass to the next season and return this', function() {
-      var ei = new EpisodeIdIterator('Archer', 1, 10);
+      var ei = new EpisodeIdIterator('Archer', 1, 10, false, function() {});
       var res = ei.nextSeason();
 
       expect(res).to.equal(ei);

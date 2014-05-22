@@ -5,21 +5,42 @@ var lib = require('../lib/index.js');
 var _ = require('lodash');
 
 (function() {
-  if (_.isEmpty(argv._)) {
-    console.log('usage:\n  tbb-transmission [-s] the torrent name\n  -s:  only search for the torrent');
+  if (_.isEmpty(argv._) || argv.usage) {
+    console.log('usage:\ntbb-transmission [--season|--download or -d] the torrent name\n');
+    console.log('DEFAULT: only display the torrent name\n');
+    console.log('--download or -d: send the torrent for Transmission to download');
+    console.log('--season: show all the episode available in a serie, can be combined with the --download option');
+    console.log('--usage: show this help section');
     return;
   }
 
   var query = argv._;
+  var download = argv.d || argv.download;
 
-  if (!argv.s) {
-    lib.downloadBestTorrent(query, function(err, torrent) {
+  if (argv.season) {
+    lib.downloadSeason(query, 1, 1, download, function(episodeId) {
+      console.log(episodeId);
+      return;
+    });
+
+    return;
+  }
+
+  if (download) {
+    lib.getBestTorrent(query, function(err, torrent) {
       if (err) {
         console.log('Error:', err);
         return;
       }
 
-      console.log('Downloading:', torrent.name, torrent.description);
+      lib.downloadTorrent(torrent, function(err, torrent) {
+        if (err) {
+          console.log(err);
+          return;
+        }
+
+        console.log('Downloading:', torrent.name, torrent.description);
+      });
     });
 
     return;

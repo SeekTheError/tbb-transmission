@@ -1,7 +1,9 @@
 tbb-transmission
 ================
 
-minimalist CLI that download the most seeded torrent on the piratebay for a given search
+*"Do you want to save time? Because that's how you save time."* 
+
+tbb-transmission is a minimalist CLI that download the most seeded torrent on the piratebay for a given search.
 
 ### Install
 
@@ -20,3 +22,9 @@ For this to work, you need to enable remote access on transmission. See Preferen
 ####display the most seeded torrent name, in case you want to check before downloading:
 
     tbb-transmission the torrent name -s
+
+### Disclaimer
+
+I do not encourage nor caution any kind of use you will have of this library. Please read the [MIT LICENSE](http://opensource.org/licenses/MIT) for more information.
+
+Pirating is bad, M'kay?
