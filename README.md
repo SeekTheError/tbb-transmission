@@ -29,7 +29,7 @@ For this to work, you need to enable remote access on transmission. See Preferen
 
 if the -d is omitted, this will simply show the names of each matching torrents. It might be a very good idea, if you add the -d option, to limit in Transmission the number of parallel downloads. See Preferences>Transfer.
 
-You can also specify a starting point. for more information, run:   
+You can also specify a starting point. For more information, type:   
 
     tbb-transmission --usage
 
