@@ -33,6 +33,13 @@ You can also specify a starting point. For more information, type:
 
     tbb-transmission --usage
 
+#### Configuration guideline
+
+Every parameter can be configured directly, like the way you access transmission or even the site you use to find torrent(in case the pirate bay do not suits your needs):
+
+    tbb-transmission --config
+
+the configuration will be saved in you home directory under .tbb-transmission.json, and can be edit manually.
 
 
 ### Disclaimer

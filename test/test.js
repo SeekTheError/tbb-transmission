@@ -7,14 +7,22 @@ var expect = require('chai').expect;
 
 describe('lib test', function() {
   it('exposes the functions', function() {
-    expect(_.size(lib)).to.equal(4);
+    expect(_.size(lib)).to.equal(6);
     expect(lib.findBestTorrent).to.be.a('Function');
     expect(lib.downloadTorrent).to.be.a('Function');
     expect(lib.EpisodeIdIterator).to.be.a('Function');
     expect(lib.downloadSeason).to.be.a('Function');
+    expect(lib.createSearchUrl).to.be.a('Function');
+    expect(lib.setConfig).to.be.a('Function');
   });
 
   describe(':: basic Integration', function() {
+
+    it('can create a searchUrl', function() {
+      var url = lib.createSearchUrl('TheTorrentName');
+      expect(url).to.equal('http://thepiratebay.se/search/TheTorrentName/0/7/0');
+    });
+
     it('can reach the pirate bay', function(done) {
       lib.findBestTorrent('a', function(err, res) {
         expect(err).to.not.exist;
