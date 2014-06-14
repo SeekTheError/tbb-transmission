@@ -58,6 +58,8 @@ function getAndWriteConfig() {
 
   if (argv.config) {
     prompt = require('prompt');
+    prompt.color = true;
+    prompt.message = '>';
     prompt.start();
 
     getAndWriteConfig();
@@ -74,7 +76,7 @@ function getAndWriteConfig() {
       '--download or -d: send the torrent for Transmission to download\n' +
       '--serie: show all the episode available in a serie, can be combined with the --download option\n' +
       '  -s: the serie number to start with\n' +
-      '  -e: the download number to start with\n' +
+      '  -e: the episode number to start with\n' +
       '--config: allow overide of the transmission parameters, and torrent search url' +
       '--usage: show this help section\n';
 
